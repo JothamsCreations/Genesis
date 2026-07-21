@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 type SpeechAlternative = { transcript: string };
 type SpeechResult = {
@@ -38,7 +38,7 @@ type VoiceWindow = Window & {
   webkitSpeechRecognition?: SpeechRecognitionConstructor;
 };
 
-type VoiceState = "checking" | "idle" | "listening" | "captured" | "error" | "unavailable";
+type VoiceState = "idle" | "listening" | "captured" | "error" | "unavailable";
 
 type VoiceIdeaInputProps = {
   currentText: string;
@@ -59,6 +59,8 @@ function getRecognitionConstructor() {
   return browserWindow.SpeechRecognition ?? browserWindow.webkitSpeechRecognition;
 }
 
+const subscribeToBrowserCapability = () => () => undefined;
+
 function combineTranscript(baseText: string, spokenText: string, maxLength: number) {
   return [baseText.trim(), spokenText.trim()]
     .filter(Boolean)
@@ -68,7 +70,12 @@ function combineTranscript(baseText: string, spokenText: string, maxLength: numb
 }
 
 export function VoiceIdeaInput({ currentText, maxLength, onTranscript }: VoiceIdeaInputProps) {
-  const [voiceState, setVoiceState] = useState<VoiceState>("checking");
+  const supportsVoiceInput = useSyncExternalStore(
+    subscribeToBrowserCapability,
+    () => Boolean(getRecognitionConstructor()),
+    () => false,
+  );
+  const [voiceState, setVoiceState] = useState<VoiceState>("idle");
   const [message, setMessage] = useState("");
   const recognitionRef = useRef<SpeechRecognitionInstance | null>(null);
   const baseTextRef = useRef("");
@@ -76,7 +83,6 @@ export function VoiceIdeaInput({ currentText, maxLength, onTranscript }: VoiceId
   const endedWithErrorRef = useRef(false);
 
   useEffect(() => {
-    setVoiceState(getRecognitionConstructor() ? "idle" : "unavailable");
     return () => recognitionRef.current?.abort();
   }, []);
 
@@ -143,9 +149,7 @@ export function VoiceIdeaInput({ currentText, maxLength, onTranscript }: VoiceId
     }
   }
 
-  if (voiceState === "checking") return null;
-
-  if (voiceState === "unavailable") {
+  if (!supportsVoiceInput || voiceState === "unavailable") {
     return (
       <p className="voice-unavailable" role="status">
         Voice input is unavailable in this browser. You can continue typing.
@@ -176,4 +180,3 @@ export function VoiceIdeaInput({ currentText, maxLength, onTranscript }: VoiceId
     </div>
   );
 }
-

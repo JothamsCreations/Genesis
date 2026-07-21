@@ -114,6 +114,7 @@ test("serves the production browser security baseline", async ({ page }) => {
   expect(headers["x-content-type-options"]).toBe("nosniff");
   expect(headers["x-frame-options"]).toBe("DENY");
   expect(headers["referrer-policy"]).toBe("strict-origin-when-cross-origin");
+  expect(headers["permissions-policy"]).toContain("microphone=(self)");
 });
 
 test("keeps small interface copy above WCAG AA contrast", async ({ page }) => {
