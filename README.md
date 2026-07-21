@@ -1,146 +1,290 @@
 # GENESIS
 
-GENESIS is an AI product architect that turns a vague product idea into a clear, risk-aware, dependency-ordered implementation blueprint and a downloadable pack of Codex-ready tasks.
+GENESIS is an AI product architect that transforms a vague product idea into a clear, risk-aware, dependency-ordered implementation blueprint and a downloadable pack of Codex-ready tasks.
 
-> Think before you build. Order before you scale.
+> **Think before you build. Order before you scale.**
 
-## What it does
+## Live demo
 
-A builder describes an idea once. GENESIS then:
+[Launch GENESIS](https://genesis-ten-beta.vercel.app/)
 
-1. clarifies the purpose, primary user, problem and intended transformation;
-2. separates first-version essentials from distractions and explicit non-goals;
-3. synthesizes vision, user, risk and architecture specialist perspectives;
-4. runs a product premortem with warning signs and early validation tests;
-5. orders the foundations and build phases by dependency;
-6. creates Codex-ready tasks with expected files, acceptance criteria and tests;
-7. performs a final purpose-alignment and launch-blocker review.
+For the fastest evaluation path, select **See GENESIS in action** and follow the FieldShield demonstration.
 
-The result can be copied or downloaded as a complete Markdown build pack.
+![GENESIS product workflow](docs/images/genesis-overview.png)
+
+## Why GENESIS matters
+
+AI coding tools can help people build quickly, but speed does not guarantee that they are building the right product, solving the right problem or implementing it in the right order.
+
+A vague request can become an expensive product before its assumptions, risks and dependencies have been examined.
+
+GENESIS adds a product-intelligence layer before implementation. It helps builders:
+
+- clarify the real problem;
+- identify the people being served;
+- separate essential features from distractions;
+- anticipate likely failure;
+- establish the correct build order;
+- create an executable implementation plan;
+- preserve alignment between the original purpose and the finished product.
+
+GENESIS does not merely help people code faster. It helps them create wisely.
+
+## What GENESIS does
+
+A builder describes an idea once. GENESIS then moves the idea through seven stages.
+
+### 1. Idea intake
+
+The user begins with an undeveloped product idea, need or problem.
+
+### 2. Clarification
+
+GENESIS identifies:
+
+- the product’s purpose;
+- the primary user;
+- the actual problem;
+- important constraints;
+- the desired transformation;
+- the simplest meaningful measure of success.
+
+### 3. Separation
+
+GENESIS distinguishes:
+
+- the true MVP from future functionality;
+- essential features from distractions;
+- users from buyers;
+- assumptions from established facts;
+- explicit goals from explicit non-goals.
+
+### 4. Octopus analysis
+
+Specialist perspectives examine the product in parallel:
+
+- vision;
+- user experience;
+- risk;
+- architecture.
+
+A central orchestrator synthesizes their findings into one coherent product decision.
+
+### 5. Premortem
+
+GENESIS imagines that the product has already failed and works backward to identify:
+
+- likely failure scenarios;
+- underlying causes;
+- likelihood and impact;
+- early warning signs;
+- preventive actions;
+- early validation tests.
+
+### 6. Creation order
+
+GENESIS maps product and technical dependencies to determine what must exist before something else can work.
+
+This prevents teams from beginning with visible features that depend on foundations they have not yet built.
+
+### 7. Codex build pack
+
+GENESIS produces structured implementation artifacts containing:
+
+- product purpose;
+- user flows;
+- architecture;
+- premortem findings;
+- dependency order;
+- implementation tasks;
+- expected files;
+- acceptance criteria;
+- required tests;
+- definition of completion;
+- final launch-blocker review.
+
+The complete build pack can be copied or downloaded as Markdown.
+
+## Demonstration: FieldShield
+
+FieldShield is the worked example used to prove the value of GENESIS.
+
+GENESIS begins with the vague request:
+
+> “Help me complete my PhD data collection while pregnant.”
+
+It then uncovers the actual context:
+
+- 640 questionnaire responses;
+- four LGAs in Oyo State;
+- 160 respondents per LGA;
+- approximately 16 research assistants;
+- quantitative questionnaires and qualitative interviews;
+- five months for data collection and analysis;
+- childbirth expected during the fieldwork period;
+- unreliable internet connectivity;
+- English, Yoruba and Pidgin interactions;
+- KoboToolbox already handling questionnaire administration.
+
+GENESIS concludes that the user does not need another survey platform.
+
+The real need is a fieldwork coordination, quality-control, continuity and handover system.
+
+That product becomes **FieldShield**.
+
+FieldShield demonstrates how GENESIS can move from an unclear request to:
+
+- a defined product purpose;
+- a bounded MVP;
+- specialist analysis;
+- a product premortem;
+- a dependency-ordered implementation plan;
+- a Codex-ready build pack;
+- a working proof of concept.
+
+FieldShield is demonstration evidence inside GENESIS, not a separate submission.
+
+All field metrics, locations, alerts and research-assistant codes used in the demo are fictional fixtures.
+
+## Judge test path
+
+Open the live deployment:
+
+[https://genesis-ten-beta.vercel.app/](https://genesis-ten-beta.vercel.app/)
+
+Then:
+
+1. Select **See GENESIS in action**.
+2. Review how GENESIS turns the vague PhD fieldwork request into a precise coordination and continuity problem.
+3. Select **Shape the FieldShield blueprint**.
+4. Move through **Council**, **Premortem** and **Creation order**.
+5. Review the four specialist perspectives, six major risks and eight ordered dependencies.
+6. Select **Build pack**.
+7. Open any of the seven generated documents.
+8. Test the copy and download actions.
+9. Select **Working proof**.
+10. Select **Akinyele** to inspect its fictional field operation.
+11. Select **Activate Handover Mode**.
+12. Confirm that delegated supervision becomes active.
+
+The complete demo works without an account, payment information or an API key.
 
 ## Build Week implementation
 
-- Next.js App Router, React, TypeScript and Tailwind CSS
-- OpenAI Responses API with `gpt-5.6-sol`
-- Zod Structured Outputs for the complete product-blueprint contract
-- Semantic validation for unique IDs, specialist coverage and forward-only dependencies
-- Escaped untrusted-input boundaries to prevent product ideas from changing system instructions
-- Server-only API credentials; the browser never receives the OpenAI API key
-- Deterministic local fallback when a key is absent, the request fails, or output validation fails
-- Explicit demo mode that never makes an OpenAI request, even if a key is present
-- Editorial, responsive interface with keyboard, focus and reduced-motion support
-- Unit, route, component and Playwright end-to-end tests
+GENESIS was built with:
 
-There is deliberately no authentication, payment system, database, collaboration layer, GitHub synchronization, deployment automation or visual website builder in this competition version.
+- Next.js App Router;
+- React;
+- TypeScript;
+- Tailwind CSS;
+- OpenAI Responses API;
+- `gpt-5.6-sol`;
+- Zod Structured Outputs;
+- Playwright;
+- unit, route and component testing.
 
-## Run locally
+The competition version includes:
 
-Requirements: Node.js 20.19+, 22.13+, or 24+ and npm. Windows, macOS and Linux are supported anywhere Next.js and Node.js run.
+- a structured product-blueprint contract;
+- semantic validation for unique IDs;
+- specialist-coverage validation;
+- forward-only dependency validation;
+- escaped untrusted-input boundaries;
+- server-only OpenAI credentials;
+- deterministic fallback behavior;
+- explicit demo mode;
+- transparent output provenance;
+- accessible keyboard and focus states;
+- reduced-motion support;
+- responsive desktop and mobile layouts;
+- functional copy and Markdown download actions.
 
-```bash
-npm install
-copy .env.example .env.local
-npm run dev
-```
+There is deliberately no:
 
-On macOS or Linux, replace the `copy` command with:
+- authentication;
+- payment system;
+- database;
+- collaboration layer;
+- GitHub synchronization;
+- deployment automation;
+- visual website builder;
+- unnecessary infrastructure.
 
-```bash
-cp .env.example .env.local
-```
+The competition build focuses on proving the core product-intelligence workflow.
 
-The copied environment file starts in deterministic demo mode:
+## How GPT-5.6 powers GENESIS
 
-```text
-GENESIS_AI_MODE=mock
-OPENAI_API_KEY=
-OPENAI_MODEL=gpt-5.6-sol
-```
+GPT-5.6 Sol is used through the OpenAI Responses API to transform an undeveloped product idea into a validated `ProductBlueprint`.
 
-`OPENAI_API_KEY` is optional in mock mode. To enable live generation later, add a funded project key and set `GENESIS_AI_MODE=auto` or `GENESIS_AI_MODE=live`. Missing keys, exhausted quota, request failures and invalid model output all fall back safely to the deterministic blueprint.
+It generates structured outputs for:
 
-Open [http://localhost:3000](http://localhost:3000). Never commit `.env.local`; it is ignored by Git.
+- product purpose;
+- intended transformation;
+- primary users;
+- constraints;
+- MVP features;
+- explicit non-goals;
+- specialist-agent findings;
+- premortem risks;
+- early warning signs;
+- preventive actions;
+- dependency-ordered build phases;
+- Codex-ready implementation tasks;
+- acceptance criteria;
+- final purpose-alignment review;
+- launch blockers.
 
-### Judge test path
+No generated output reaches the interface unless it passes:
 
-1. Select **See GENESIS in action**.
-2. Review how GENESIS turns the vague PhD-fieldwork request into a precise coordination and continuity problem.
-3. Select **Shape the FieldShield blueprint**.
-4. Move through **Council**, **Premortem** and **Creation order** to review the four specialists, six risks and eight dependencies.
-5. Select **Build pack** and open any of the seven documents; copy and download actions are functional.
-6. Select **Working proof**, then select **Akinyele** to inspect its field operation.
-7. Select **Activate Handover Mode** and confirm delegated supervision becomes active.
+1. the Zod `ProductBlueprint` schema;
+2. semantic validation;
+3. dependency-integrity validation.
 
-FieldShield is demonstration evidence inside GENESIS, not a separate submission. All field metrics and research-assistant codes are fictional fixtures.
+When live generation is unavailable, GENESIS transparently returns a deterministic fallback rather than presenting an unexplained failure.
 
-In the default mock mode, the same path returns a transparent deterministic demo blueprint so the complete product remains testable without billing or network access. The result identifies whether it came from GPT-5.6, deliberate demo mode or a live-analysis fallback.
+The interface identifies whether an output came from:
 
-## Verification
-
-```bash
-npm run typecheck
-npm run lint
-npm test
-npm run build
-npx playwright install chromium
-npm run test:e2e
-```
-
-## Architecture
-
-```text
-Browser
-  -> GenesisFlow (idea, clarification, analysis and export)
-  -> POST /api/blueprint
-     -> validate IdeaInput
-     -> generation service
-        -> OpenAI Responses API + Zod Structured Output
-        -> validate ProductBlueprint
-        -> deterministic fallback on any failure
-  -> FieldShield demo workspace (purpose, council, premortem, order, build pack, proof)
-  -> editorial blueprint document
-```
-
-- `app/api/blueprint/route.ts` is the small server boundary.
-- `lib/blueprint/schema.ts` is the runtime contract for input and output.
-- `lib/blueprint/openai-requester.ts` contains the isolated GPT-5.6 request.
-- `lib/blueprint/generation-service.ts` owns validation, provenance and fallback behavior.
-- `lib/blueprint/mock-generator.ts` creates stable judgeable sample output.
-- `lib/blueprint/build-pack.ts` produces the complete Codex-ready Markdown artifact.
-- `components/genesis/` owns the accessible product journey and document view.
-
-No generated model output reaches the interface unless it passes both the ProductBlueprint schema and dependency-integrity validation.
+- live GPT-5.6 generation;
+- deliberate demo mode;
+- validated fallback mode.
 
 ## How Codex accelerated the build
 
 Codex was used as the primary implementation environment to:
 
-- inspect and preserve the repository-scoped skill architecture;
-- turn the product philosophy into a typed blueprint contract;
-- implement the Next.js product from vertical-slice tests;
-- integrate the official OpenAI SDK and Responses API;
-- catch scope drift, encoding issues and fallback ambiguities;
-- run type, lint, unit, route, component, build and browser verification;
-- prepare the judge test path and submission materials.
+- inspect the repository;
+- preserve the repository-scoped skill architecture;
+- convert the product philosophy into a typed blueprint contract;
+- plan the smallest reliable architecture;
+- implement the application through vertical slices;
+- integrate the official OpenAI SDK;
+- implement the Responses API workflow;
+- create the FieldShield demonstration;
+- protect server-only credentials;
+- identify encoding and fallback issues;
+- catch scope drift;
+- improve the interface;
+- create and run tests;
+- verify the production build;
+- prepare the judge test path;
+- prepare the submission documentation.
 
-Human product decisions remained explicit: narrow scope, purpose before features, a premortem before investment, transparent provenance, no invented market evidence, no hidden failure state and no unnecessary infrastructure.
+Human product decisions remained explicit:
 
-## Repository-scoped skills
+- purpose before features;
+- a narrow competition MVP;
+- risk analysis before investment;
+- transparent output provenance;
+- no invented market evidence;
+- no hidden failure state;
+- no unnecessary infrastructure;
+- FieldShield as proof of GENESIS rather than a separate product.
 
-The project includes reusable Codex skills under `.agents/skills/` for design quality, frontend patterns, test-driven work and verification. They guide implementation; they are not bundled into the production application.
+## Reliability and fallback behavior
 
-## Product philosophy
+GENESIS supports three AI modes:
 
-- Purpose before production
-- Essentials separated from distractions
-- Foundations before visible features
-- Continuous evaluation
-- Premortem before major investment
-- Central vision with distributed specialist intelligence
-- Completion and review
-
-## Submission checklist
-
-See [docs/DEVPOST-SUBMISSION.md](docs/DEVPOST-SUBMISSION.md), [docs/SUBMISSION-CHECKLIST.md](docs/SUBMISSION-CHECKLIST.md) and [docs/FIELDSHIELD-DEMO-SCRIPT.md](docs/FIELDSHIELD-DEMO-SCRIPT.md).
-
-Before a public submission, the repository owner must choose and add the appropriate license. Alternatively, keep the repository private and share judge access as required by the Build Week rules.
+```text
+GENESIS_AI_MODE=mock
+GENESIS_AI_MODE=auto
+GENESIS_AI_MODE=live
