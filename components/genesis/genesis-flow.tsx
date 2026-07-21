@@ -5,6 +5,7 @@ import { useLayoutEffect, useReducer, useRef } from "react";
 
 import { AnalysisProgress } from "@/components/genesis/analysis-progress";
 import { BlueprintView } from "@/components/genesis/blueprint-view";
+import { FieldShieldDemoWorkspace } from "@/components/genesis/fieldshield-demo-workspace";
 import { DemoClarification } from "@/components/genesis/demo-clarification";
 import { IdeaIntake } from "@/components/genesis/idea-intake";
 import { StageRail } from "@/components/genesis/stage-rail";
@@ -144,6 +145,11 @@ export function GenesisFlow({
     ? 6
     : state.status === "generating" ? 2 : state.status === "clarifying" ? 1 : 0;
 
+  const fieldShieldReady = state.status === "ready"
+    && state.blueprint !== null
+    && state.meta !== null
+    && (state.demoMode || isFieldShieldBlueprint(state.blueprint));
+
   return (
     <div className="app-frame">
       <a className="skip-link" href="#main-content">Skip to main content</a>
@@ -152,19 +158,30 @@ export function GenesisFlow({
         <p>Build Week / Product architect</p>
         <span className="prototype-note">Demo-ready / OpenAI-compatible</span>
       </header>
-      <StageRail activeStage={activeStage} />
+      {!fieldShieldReady ? <StageRail activeStage={activeStage} /> : null}
 
       {state.status === "ready" && state.blueprint && state.meta ? (
-        <BlueprintView
-          blueprint={state.blueprint}
-          copyStatus={state.copyStatus}
-          headingRef={blueprintHeadingRef}
-          fieldShieldDemo={state.demoMode || isFieldShieldBlueprint(state.blueprint)}
-          meta={state.meta}
-          onCopy={handleCopy}
-          onDownload={handleDownload}
-          onReset={() => dispatch({ type: "reset" })}
-        />
+        fieldShieldReady ? (
+          <FieldShieldDemoWorkspace
+            blueprint={state.blueprint}
+            copyStatus={state.copyStatus}
+            headingRef={blueprintHeadingRef}
+            meta={state.meta}
+            onCopy={handleCopy}
+            onDownload={handleDownload}
+            onReset={() => dispatch({ type: "reset" })}
+          />
+        ) : (
+          <BlueprintView
+            blueprint={state.blueprint}
+            copyStatus={state.copyStatus}
+            headingRef={blueprintHeadingRef}
+            meta={state.meta}
+            onCopy={handleCopy}
+            onDownload={handleDownload}
+            onReset={() => dispatch({ type: "reset" })}
+          />
+        )
       ) : state.status === "clarifying" ? (
         <DemoClarification
           onBack={() => dispatch({ type: "reset" })}
@@ -185,10 +202,10 @@ export function GenesisFlow({
         />
       )}
 
-      <footer className="site-footer">
+      {!fieldShieldReady ? <footer className="site-footer">
         <p>Think before you build. Order before you scale.</p>
         <p>GENESIS / Build Week 2026</p>
-      </footer>
+      </footer> : null}
     </div>
   );
 }

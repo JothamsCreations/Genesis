@@ -58,11 +58,11 @@ export function IdeaIntake({
           {error ? <p className="field-error" id="idea-error" role="alert">{error}</p> : null}
 
           <div className="form-actions">
-            <Button disabled={isGenerating} type="submit">
-              {isGenerating ? "Shaping the blueprint…" : "Shape the blueprint"}
+            <Button aria-label="Run FieldShield Demo" disabled={isGenerating} onClick={onRunDemo} type="button">
+              See GENESIS in action
             </Button>
-            <Button disabled={isGenerating} onClick={onRunDemo} type="button" variant="secondary">
-              Run FieldShield Demo
+            <Button disabled={isGenerating} type="submit" variant="secondary">
+              Shape the blueprint
             </Button>
             <Button disabled={isGenerating} onClick={onUseSample} type="button" variant="quiet">
               Use sample idea

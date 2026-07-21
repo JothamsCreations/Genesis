@@ -36,7 +36,7 @@ export function FieldShieldPrototype() {
     <section className="fieldshield-prototype" aria-labelledby="fieldshield-dashboard-heading">
       <header className="prototype-header">
         <div>
-          <p className="section-label"><span>07 / Working evidence</span>Generated vertical slice</p>
+          <p className="section-label">Working evidence</p>
           <h2 id="fieldshield-dashboard-heading">Field Operations Dashboard</h2>
           <p>Fictional operational data shaped from the GENESIS blueprint. No participant information is displayed.</p>
         </div>

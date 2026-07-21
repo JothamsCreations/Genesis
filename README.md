@@ -63,12 +63,12 @@ Open [http://localhost:3000](http://localhost:3000). Never commit `.env.local`; 
 
 ### Judge test path
 
-1. Select **Run FieldShield Demo**.
+1. Select **See GENESIS in action**.
 2. Review how GENESIS turns the vague PhD-fieldwork request into a precise coordination and continuity problem.
 3. Select **Shape the FieldShield blueprint**.
-4. Review the four domain specialists, six-risk premortem and eight-step creation order.
-5. Open any of the seven build-pack documents; copy or download actions are functional.
-6. In the embedded FieldShield prototype, select **Akinyele** to inspect its field operation.
+4. Move through **Council**, **Premortem** and **Creation order** to review the four specialists, six risks and eight dependencies.
+5. Select **Build pack** and open any of the seven documents; copy and download actions are functional.
+6. Select **Working proof**, then select **Akinyele** to inspect its field operation.
 7. Select **Activate Handover Mode** and confirm delegated supervision becomes active.
 
 FieldShield is demonstration evidence inside GENESIS, not a separate submission. All field metrics and research-assistant codes are fictional fixtures.
@@ -90,13 +90,14 @@ npm run test:e2e
 
 ```text
 Browser
-  -> GenesisFlow (idea, progress, result, export)
+  -> GenesisFlow (idea, clarification, analysis and export)
   -> POST /api/blueprint
      -> validate IdeaInput
      -> generation service
         -> OpenAI Responses API + Zod Structured Output
         -> validate ProductBlueprint
         -> deterministic fallback on any failure
+  -> FieldShield demo workspace (purpose, council, premortem, order, build pack, proof)
   -> editorial blueprint document
 ```
 

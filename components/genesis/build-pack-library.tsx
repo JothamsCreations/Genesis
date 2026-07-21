@@ -33,7 +33,7 @@ export function BuildPackLibrary({ blueprint }: { blueprint: ProductBlueprint })
   return (
     <section className="build-library" aria-labelledby="build-library-heading">
       <header>
-        <p className="section-label"><span>06 / Artifacts</span>From blueprint to execution</p>
+        <p className="section-label">From blueprint to execution</p>
         <h2 id="build-library-heading">Seven-document build pack</h2>
         <p>Every artifact is generated from the same risk-aware product contract and is ready to copy or download.</p>
       </header>

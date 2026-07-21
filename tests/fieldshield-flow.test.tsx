@@ -45,11 +45,22 @@ describe("FieldShield GENESIS journey", () => {
 
     await user.click(screen.getByRole("button", { name: /shape the fieldshield blueprint/i }));
 
-    expect(await screen.findByText("FieldShield", { exact: true })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: /fieldshield is the real product/i })).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: /^council$/i }));
     expect(screen.getByText("Research Operations Agent", { exact: true })).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: /^premortem$/i }));
+    expect(screen.getByRole("heading", { name: /failure, before investment/i })).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: /^creation order$/i }));
     expect(screen.getByText(/do not begin with the dashboard/i)).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: /^build pack$/i }));
     expect(screen.getByRole("heading", { name: /seven-document build pack/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "PREMORTEM.md" })).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: /^working proof$/i }));
     expect(screen.getByRole("heading", { name: /field operations dashboard/i })).toBeInTheDocument();
     expect(screen.getByText(/427 of 640 responses/i)).toBeInTheDocument();
 

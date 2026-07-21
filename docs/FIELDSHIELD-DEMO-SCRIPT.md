@@ -4,7 +4,7 @@
 
 "AI coding tools make production incredibly fast. But speed also makes it easier to build the wrong product in the wrong order. GENESIS is the product architect that sits before production."
 
-Show the seven-stage rail and select **Run FieldShield Demo**.
+Show the focused idea composer and select **See GENESIS in action**.
 
 ## 0:18-0:42 - Clarify the vague idea
 
@@ -20,19 +20,19 @@ Select **Shape the FieldShield blueprint**.
 
 ## 0:42-1:08 - Distributed intelligence
 
-Show the four named specialists and central synthesis.
+Select **Council**, then show the four named specialists and central synthesis.
 
 "Research Operations, User Experience, Risk and Architecture examine one bounded responsibility each. GENESIS then reconciles their findings into one product decision."
 
 ## 1:08-1:34 - Premortem and boundaries
 
-Show the nine essentials beside the explicit non-goals. Scroll through two risks and point to their early warnings.
+The **Purpose** view separates nine essentials from explicit non-goals. Select **Premortem**, then compare two risks and their early warnings.
 
 "Before investment, GENESIS imagines the product has failed. It identifies sampling imbalance, duplicate records, prolonged offline queues, handover failure, transcription backlog and repeated incomplete work."
 
 ## 1:34-1:55 - Creation order
 
-Show the eight foundations and the callout:
+Select **Creation order**. Show the eight foundations and the callout:
 
 "Do not begin with the dashboard. The dashboard depends on trustworthy field activity data."
 
@@ -40,13 +40,13 @@ Show the eight foundations and the callout:
 
 ## 1:55-2:18 - Codex build pack
 
-Open **TASKS.md**, then **PREMORTEM.md**.
+Select **Build pack**. Open **TASKS.md**, then **PREMORTEM.md**.
 
 "One approved blueprint becomes seven consistent artifacts. Codex receives purpose, dependencies, files, acceptance criteria, tests, prohibited scope and a definition of completion."
 
 ## 2:18-2:45 - Working evidence
 
-Reveal the embedded Field Operations Dashboard. Select **Akinyele**, then select **Activate Handover Mode**.
+Select **Working proof** to reveal the Field Operations Dashboard. Select **Akinyele**, then select **Activate Handover Mode**.
 
 "This is not a second submission. It is the working vertical slice generated from GENESIS's own plan. Every metric is fictional, and the complete demo runs locally without an API key."
 

@@ -4,7 +4,7 @@ import "./globals.css";
 import "./fieldshield.css";
 
 export const metadata: Metadata = {
-  title: "GENESIS — Product architecture before production",
+  title: "GENESIS - Product architecture before production",
   description: "Turn a vague product idea into a risk-aware, dependency-ordered implementation blueprint.",
 };
 
