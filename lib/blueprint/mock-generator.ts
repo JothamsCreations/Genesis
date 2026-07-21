@@ -1,3 +1,5 @@
+import { generateFieldShieldBlueprint, isFieldShieldIdea } from "@/lib/demo/fieldshield";
+
 import type { IdeaInput, ProductBlueprint } from "./types";
 
 const educationTerms = ["school", "student", "teacher", "examination", "learning"];
@@ -11,6 +13,7 @@ export function generateMockBlueprint(input: IdeaInput): ProductBlueprint {
     && roomComfortTerms.some((term) => normalizedIdea.includes(term));
 
   if (isRoomComfortIdea) return generateRoomComfortBlueprint(input);
+  if (isFieldShieldIdea(normalizedIdea)) return generateFieldShieldBlueprint(input);
   return generateBaseMockBlueprint(input);
 }
 

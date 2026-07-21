@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import "./fieldshield.css";
 
 export const metadata: Metadata = {
   title: "GENESIS — Product architecture before production",

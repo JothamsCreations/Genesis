@@ -21,8 +21,8 @@
 - [ ] Record a public YouTube video under three minutes.
 - [ ] Include audio explaining the product and how GPT-5.6 and Codex were used.
 - [ ] Keep the browser zoom and text readable.
-- [ ] Show the live source label, specialist state, premortem, ordered plan, Codex task and export.
-- [ ] Use the script in `docs/DEMO-SCRIPT.md`.
+- [ ] Show FieldShield clarification, specialist synthesis, premortem, creation order, build pack, LGA detail and Handover Mode.
+- [ ] Use the script in `docs/FIELDSHIELD-DEMO-SCRIPT.md`.
 
 ## Devpost
 

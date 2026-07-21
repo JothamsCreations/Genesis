@@ -63,12 +63,15 @@ Open [http://localhost:3000](http://localhost:3000). Never commit `.env.local`; 
 
 ### Judge test path
 
-1. Select **Use sample idea**.
-2. Select **Shape the blueprint**.
-3. Observe the specialist synthesis state.
-4. Review purpose, boundaries, specialist findings, premortem, foundations and ordered build phases.
-5. Expand the Codex task pack by scrolling through all tasks.
-6. Select **Download Markdown** and inspect the exported build pack.
+1. Select **Run FieldShield Demo**.
+2. Review how GENESIS turns the vague PhD-fieldwork request into a precise coordination and continuity problem.
+3. Select **Shape the FieldShield blueprint**.
+4. Review the four domain specialists, six-risk premortem and eight-step creation order.
+5. Open any of the seven build-pack documents; copy or download actions are functional.
+6. In the embedded FieldShield prototype, select **Akinyele** to inspect its field operation.
+7. Select **Activate Handover Mode** and confirm delegated supervision becomes active.
+
+FieldShield is demonstration evidence inside GENESIS, not a separate submission. All field metrics and research-assistant codes are fictional fixtures.
 
 In the default mock mode, the same path returns a transparent deterministic demo blueprint so the complete product remains testable without billing or network access. The result identifies whether it came from GPT-5.6, deliberate demo mode or a live-analysis fallback.
 
@@ -137,6 +140,6 @@ The project includes reusable Codex skills under `.agents/skills/` for design qu
 
 ## Submission checklist
 
-See [docs/DEVPOST-SUBMISSION.md](docs/DEVPOST-SUBMISSION.md), [docs/SUBMISSION-CHECKLIST.md](docs/SUBMISSION-CHECKLIST.md) and [docs/DEMO-SCRIPT.md](docs/DEMO-SCRIPT.md).
+See [docs/DEVPOST-SUBMISSION.md](docs/DEVPOST-SUBMISSION.md), [docs/SUBMISSION-CHECKLIST.md](docs/SUBMISSION-CHECKLIST.md) and [docs/FIELDSHIELD-DEMO-SCRIPT.md](docs/FIELDSHIELD-DEMO-SCRIPT.md).
 
 Before a public submission, the repository owner must choose and add the appropriate license. Alternatively, keep the repository private and share judge access as required by the Build Week rules.

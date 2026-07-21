@@ -8,6 +8,7 @@ type IdeaIntakeProps = {
   isGenerating: boolean;
   textareaRef: RefObject<HTMLTextAreaElement | null>;
   onIdeaChange: (idea: string) => void;
+  onRunDemo: () => void;
   onSubmit: (event: FormEvent<HTMLFormElement>) => void;
   onUseSample: () => void;
 };
@@ -18,6 +19,7 @@ export function IdeaIntake({
   isGenerating,
   textareaRef,
   onIdeaChange,
+  onRunDemo,
   onSubmit,
   onUseSample,
 }: IdeaIntakeProps) {
@@ -58,6 +60,9 @@ export function IdeaIntake({
           <div className="form-actions">
             <Button disabled={isGenerating} type="submit">
               {isGenerating ? "Shaping the blueprint…" : "Shape the blueprint"}
+            </Button>
+            <Button disabled={isGenerating} onClick={onRunDemo} type="button" variant="secondary">
+              Run FieldShield Demo
             </Button>
             <Button disabled={isGenerating} onClick={onUseSample} type="button" variant="quiet">
               Use sample idea

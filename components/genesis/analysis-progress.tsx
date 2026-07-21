@@ -1,14 +1,23 @@
 import type { CSSProperties } from "react";
 
-const specialists = [
+const defaultSpecialists = [
   ["Vision architect", "Clarifying the purpose and smallest meaningful promise"],
   ["User advocate", "Interrogating the user, problem and desired change"],
   ["Risk strategist", "Running the premortem and defining early warning signs"],
   ["Systems architect", "Ordering foundations, dependencies and build phases"],
   ["Central synthesis", "Reconciling findings into one coherent blueprint"],
 ] as const;
+const fieldShieldSpecialists = [
+  ["Research Operations Agent", "Testing sampling balance, workloads and continuity"],
+  ["User Experience Agent", "Separating the field and supervisor experiences"],
+  ["Risk Agent", "Premorteming connectivity, quality and handover failure"],
+  ["Architecture Agent", "Ordering offline capture before visible reporting"],
+  ["Central GENESIS", "Reconciling the four perspectives into FieldShield"],
+] as const;
 
-export function AnalysisProgress() {
+
+export function AnalysisProgress({ fieldShield = false }: { fieldShield?: boolean }) {
+  const specialists = fieldShield ? fieldShieldSpecialists : defaultSpecialists;
   return (
     <main className="analysis-shell" id="main-content" aria-live="polite">
       <section className="analysis-copy">

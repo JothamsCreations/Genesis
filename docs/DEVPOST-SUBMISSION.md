@@ -154,11 +154,12 @@ Authentication, billing, team collaboration, GitHub synchronization and deployme
 ## Judge test instructions
 
 1. Open [DEPLOYED_URL].
-2. Select **Use sample idea**.
-3. Select **Shape the blueprint**.
-4. Observe the specialist synthesis state.
-5. Review the premortem, foundations, ordered phases and all Codex-ready tasks.
-6. Select **Download Markdown**.
-7. Confirm the source label identifies GPT-5.6 or local fallback.
+2. Select **Run FieldShield Demo**.
+3. Review the clarified fieldwork context, then select **Shape the FieldShield blueprint**.
+4. Review the four specialist findings, six-risk premortem and eight-step creation order.
+5. Open the seven-document build pack and inspect **TASKS.md**.
+6. In the embedded prototype, review **Akinyele** and activate **Handover Mode**.
+7. Confirm the source label says **Demo blueprint** and no API key was required.
+8. Optionally copy or download a build-pack document.
 
 The repository README contains local setup and complete verification commands.

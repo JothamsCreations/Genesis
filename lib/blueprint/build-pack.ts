@@ -4,7 +4,7 @@ const bullets = (items: string[]) => items.map((item) => `- ${item}`).join("\n")
 
 export function buildBlueprintMarkdown(blueprint: ProductBlueprint) {
   const risks = blueprint.premortem
-    .map((risk) => `### ${risk.category}: ${risk.failure}\n\n- Likelihood: ${risk.likelihood}\n- Impact: ${risk.impact}\n- Prevention: ${risk.prevention}\n- Validation: ${risk.validationTest}`)
+    .map((risk) => `### ${risk.category}: ${risk.failure}\n\n- Underlying cause: ${risk.underlyingCause}\n- Likelihood: ${risk.likelihood}\n- Impact: ${risk.impact}\n- Early warning: ${risk.warningSigns.join("; ")}\n- Prevention: ${risk.prevention}\n- Validation: ${risk.validationTest}`)
     .join("\n\n");
   const foundations = blueprint.foundations
     .map((item, index) => `${index + 1}. **${item.name}** - ${item.whyRequired}\n   - Complete when: ${item.completionCriteria.join("; ")}`)

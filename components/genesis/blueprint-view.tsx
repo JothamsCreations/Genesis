@@ -1,10 +1,14 @@
 import type { RefObject } from "react";
 
 import { Button } from "@/components/ui/button";
+import { BuildPackLibrary } from "@/components/genesis/build-pack-library";
+import { FieldShieldPrototype } from "@/components/genesis/fieldshield-prototype";
 import type { BlueprintGenerationMeta, ProductBlueprint, Specialist } from "@/lib/blueprint/types";
+import { FIELD_SHIELD_CREATION_PRINCIPLE, FIELD_SHIELD_SPECIALIST_NAMES, FIELD_SHIELD_SYNTHESIS } from "@/lib/demo/fieldshield";
 
 type BlueprintViewProps = {
   blueprint: ProductBlueprint;
+  fieldShieldDemo?: boolean;
   copyStatus: "idle" | "copied" | "error";
   headingRef: RefObject<HTMLHeadingElement | null>;
   meta: BlueprintGenerationMeta;
@@ -26,6 +30,7 @@ function SectionLabel({ children, number }: { children: string; number: string }
 
 export function BlueprintView({
   blueprint,
+  fieldShieldDemo = false,
   copyStatus,
   headingRef,
   meta,
@@ -34,6 +39,7 @@ export function BlueprintView({
   onReset,
 }: BlueprintViewProps) {
   const essential = blueprint.boundaries.features.filter((feature) => feature.priority === "essential");
+  const resolvedSpecialistNames = fieldShieldDemo ? FIELD_SHIELD_SPECIALIST_NAMES : specialistNames;
   const sourceLabel = meta.mode === "openai"
     ? `Generated with ${meta.model ?? "GPT-5.6 Sol"}`
     : meta.fallbackReason === "demo_mode"
@@ -106,13 +112,19 @@ export function BlueprintView({
           <div className="specialist-grid">
             {blueprint.specialistFindings.map((item) => (
               <article key={`${item.specialist}-${item.finding}`}>
-                <div className="specialist-heading"><h3>{specialistNames[item.specialist]}</h3><span>{item.confidence}</span></div>
+                <div className="specialist-heading"><h3>{resolvedSpecialistNames[item.specialist]}</h3><span>{item.confidence}</span></div>
                 <p>{item.finding}</p>
                 <strong>Recommendation</strong>
                 <p>{item.recommendation}</p>
               </article>
             ))}
           </div>
+          {fieldShieldDemo ? (
+            <div className="central-synthesis">
+              <span>Central GENESIS synthesis</span>
+              <p>{FIELD_SHIELD_SYNTHESIS}</p>
+            </div>
+          ) : null}
         </section>
 
         <section className="blueprint-section" aria-labelledby="premortem-heading">
@@ -126,7 +138,11 @@ export function BlueprintView({
                   <div className="risk-meta"><span>{risk.category}</span><span>{risk.likelihood} likelihood</span><span>{risk.impact} impact</span></div>
                   <h3>{risk.failure}</h3>
                   <p>{risk.underlyingCause}</p>
-                  <dl><div><dt>Prevent</dt><dd>{risk.prevention}</dd></div><div><dt>Test early</dt><dd>{risk.validationTest}</dd></div></dl>
+                  <dl>
+                    <div><dt>Early warning</dt><dd>{risk.warningSigns.join("; ")}</dd></div>
+                    <div><dt>Prevent</dt><dd>{risk.prevention}</dd></div>
+                    <div><dt>Test early</dt><dd>{risk.validationTest}</dd></div>
+                  </dl>
                 </div>
               </article>
             ))}
@@ -136,6 +152,9 @@ export function BlueprintView({
         <section className="blueprint-section" aria-labelledby="foundations-heading">
           <SectionLabel number="05">Foundations before visible features</SectionLabel>
           <h2 id="foundations-heading">Foundations</h2>
+          {fieldShieldDemo ? (
+            <blockquote className="creation-principle">{FIELD_SHIELD_CREATION_PRINCIPLE}</blockquote>
+          ) : null}
           <ol className="foundation-sequence">
             {blueprint.foundations.map((foundation, index) => (
               <li key={foundation.id}>
@@ -183,6 +202,12 @@ export function BlueprintView({
 
         <section className="blueprint-section review-section" aria-labelledby="review-heading">
           <SectionLabel number="07">Completion and review</SectionLabel>
+        {fieldShieldDemo ? (
+          <>
+            <BuildPackLibrary blueprint={blueprint} />
+            <FieldShieldPrototype />
+          </>
+        ) : null}
           <h2 id="review-heading">Completion review</h2>
           <div className="review-grid">
             <div><h3>Purpose alignment</h3><ul>{blueprint.review.purposeAlignment.map((item) => <li key={item}>{item}</li>)}</ul></div>
