@@ -13,7 +13,7 @@ describe("Next.js security headers", () => {
     );
 
     expect(headers).toMatchObject({
-      "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+      "Permissions-Policy": "camera=(), microphone=(self), geolocation=()",
       "Referrer-Policy": "strict-origin-when-cross-origin",
       "X-Content-Type-Options": "nosniff",
       "X-Frame-Options": "DENY",

@@ -1,5 +1,46 @@
 import { expect, test } from "@playwright/test";
 
+test("dictates a product idea through the browser voice control", async ({ page }) => {
+  await page.addInitScript(() => {
+    class MockRecognition {
+      continuous = false;
+      interimResults = false;
+      lang = "";
+      onstart: ((event: Event) => void) | null = null;
+      onresult: ((event: Event) => void) | null = null;
+      onerror: ((event: Event) => void) | null = null;
+      onend: ((event: Event) => void) | null = null;
+
+      start() {
+        this.onstart?.(new Event("start"));
+        const result = { 0: { transcript: "An app that helps neighbours share unused tools" }, isFinal: true, length: 1 };
+        this.onresult?.(Object.assign(new Event("result"), { resultIndex: 0, results: { 0: result, length: 1 } }));
+        this.onend?.(new Event("end"));
+      }
+
+      stop() { this.onend?.(new Event("end")); }
+      abort() { return undefined; }
+    }
+
+    Object.defineProperty(window, "webkitSpeechRecognition", {
+      configurable: true,
+      value: MockRecognition,
+    });
+    Object.defineProperty(window, "SpeechRecognition", {
+      configurable: true,
+      value: MockRecognition,
+    });
+  });
+
+  await page.goto("/");
+  await page.getByRole("button", { name: /start voice input/i }).click();
+
+  await expect(page.getByLabel(/describe what you want to create/i)).toHaveValue(
+    "An app that helps neighbours share unused tools",
+  );
+  await expect(page.getByRole("status")).toContainText(/voice captured/i);
+});
+
 test("a builder can turn an idea into a Codex-ready blueprint", async ({ page }) => {
   await page.goto("/");
 

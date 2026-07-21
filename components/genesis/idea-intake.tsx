@@ -1,5 +1,6 @@
 import type { FormEvent, RefObject } from "react";
 
+import { VoiceIdeaInput } from "@/components/genesis/voice-idea-input";
 import { Button } from "@/components/ui/button";
 
 type IdeaIntakeProps = {
@@ -49,11 +50,13 @@ export function IdeaIntake({
             rows={7}
             value={idea}
           />
+          <VoiceIdeaInput currentText={idea} maxLength={1200} onTranscript={onIdeaChange} />
           <p className="field-guidance" id="idea-guidance">
             Include the person, their problem and the change you hope to create. Rough language is welcome.
           </p>
           <p className="privacy-note" id="idea-privacy">
-            Demo mode stays local. When live analysis is enabled, your idea is sent to OpenAI. This prototype keeps no project database.
+            Typed ideas stay local in demo mode. Voice dictation is handled by your browser and may use its speech service.
+            When live analysis is enabled, your idea is sent to OpenAI. This prototype keeps no project database.
           </p>
           {error ? <p className="field-error" id="idea-error" role="alert">{error}</p> : null}
 
